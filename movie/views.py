@@ -17,6 +17,10 @@ def home(request):
 def about(request):
   return render(request, "about.html")
 
+def signup(request):
+  email = request.GET.get("email")
+  return render(request, "signup.html", {"email": email})
+
 def statistics_view(request):
   years_chart = generate_movies_per_year_chart()
   genres_chart = generate_movies_per_genre_chart()
